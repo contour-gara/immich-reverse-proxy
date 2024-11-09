@@ -1,0 +1,16 @@
+services:
+  nginx:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    healthcheck:
+      test: "curl -f http://localhost:80 || exit 1"
+      interval: 5s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+    environment:
+      MY_GLOBAL_IP: ${MY_GLOBAL_IP}
+      PORT: ${PORT}
