@@ -12,4 +12,4 @@ services:
       retries: 3
       start_period: 30s
     environment:
-      IMMICH_ADDRESS: ${IMMICH_ADDRESS}
+      MY_GLOBAL_IP: ${MY_GLOBAL_IP}
