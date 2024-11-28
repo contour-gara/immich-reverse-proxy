@@ -10,7 +10,7 @@ services:
       interval: 5s
       timeout: 5s
       retries: 3
-      start_period: 30s
+      start_period: 5s
     environment:
       MY_GLOBAL_IP: ${MY_GLOBAL_IP}
       PORT: ${PORT}
