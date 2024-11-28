@@ -6,7 +6,7 @@ services:
       MY_GLOBAL_IP: host.docker.internal
       IMMICH_PORT: 7000
   test:
-    image: nginx:1.27.2-alpine3.20-slim
+    image: nginx:1.27.3-alpine3.20-slim
     volumes:
       - ./test:/usr/share/nginx/html
     ports:

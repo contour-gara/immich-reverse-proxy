@@ -5,12 +5,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - "80:80"
-    healthcheck:
-      test: "curl -f http://localhost:80 || exit 1"
-      interval: 5s
-      timeout: 5s
-      retries: 3
-      start_period: 5s
     environment:
       MY_GLOBAL_IP: ${MY_GLOBAL_IP}
       IMMICH_PORT: ${IMMICH_PORT}

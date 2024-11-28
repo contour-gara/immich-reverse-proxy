@@ -22,7 +22,7 @@ jobs:
       - name: Create git tag
         id: create_tag
         run: |
-          TAG_NAME=2.3.$(date +%Y%m%d%H%M%S)
+          TAG_NAME=2.4.$(date +%Y%m%d%H%M%S)
           git tag $TAG_NAME
           git push origin $TAG_NAME
           echo "tag_name=$TAG_NAME" >> $GITHUB_OUTPUT
