@@ -13,4 +13,4 @@ services:
       start_period: 5s
     environment:
       MY_GLOBAL_IP: ${MY_GLOBAL_IP}
-      PORT: ${PORT}
+      IMMICH_PORT: ${IMMICH_PORT}
