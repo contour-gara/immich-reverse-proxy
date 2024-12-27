@@ -17,7 +17,7 @@ jobs:
       tag_name: ${{ steps.create_tag.outputs.tag_name }}
     steps:
       - name: Checkout
-        uses: actions/checkout/@v4.2.2
+        uses: actions/checkout@v4.2.2
 
       - name: Create git tag
         id: create_tag
@@ -34,7 +34,7 @@ jobs:
       AWS_REGION: ap-northeast-1
     steps:
       - name: Checkout
-        uses: actions/checkout/@v4.2.2
+        uses: actions/checkout@v4.2.2
 
       - name: Login AWS
         uses: aws-actions/configure-aws-credentials@v4.0.2
