@@ -4,6 +4,7 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 plugins {
     kotlin("jvm") version "2.1.0"
     id("org.gauge") version "2.1.0"
+    id("com.avast.gradle.docker-compose") version "0.17.12"
 }
 
 group = "org.contourgara"
@@ -29,4 +30,15 @@ kotlin {
         jvmTarget.set(JvmTarget.JVM_21)
         freeCompilerArgs.add("-Xjsr305=strict")
     }
+}
+
+val integrationTest = tasks.register<Test>("integrationTest") {
+    description = "Runs integration tests."
+    dependsOn("composeUp", "gauge")
+    finalizedBy("composeDown")
+}
+
+dockerCompose {
+    useComposeFiles = listOf("./compose.yml", "./compose.test.yml")
+    composeAdditionalArgs = listOf("--compatibility")
 }
