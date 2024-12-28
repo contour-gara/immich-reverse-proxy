@@ -39,6 +39,6 @@ val integrationTest = tasks.register<Test>("integrationTest") {
 }
 
 dockerCompose {
-    useComposeFiles = listOf("./compose.yml", "./compose.test.yml")
+    useComposeFiles = listOf("../compose.yml", "../compose.test.yml")
     composeAdditionalArgs = listOf("--compatibility")
 }

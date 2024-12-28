@@ -1,1 +1,2 @@
-rootProject.name = "immich-reverse-proxy-test"
+rootProject.name = "immich-reverse-proxy"
+include("reverse-proxy-test")
