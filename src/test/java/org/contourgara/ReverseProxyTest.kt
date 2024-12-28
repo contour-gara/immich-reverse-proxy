@@ -1,11 +1,17 @@
 package org.contourgara
 
+import com.thoughtworks.gauge.BeforeScenario
 import com.thoughtworks.gauge.Step
 import io.restassured.RestAssured.*
 import org.hamcrest.Matchers.*
 
 class ReverseProxyTest {
-    var testContext: TestContext = TestContext(null)
+    lateinit var testContext: TestContext
+
+    @BeforeScenario
+    fun setUp() {
+        testContext = TestContext(null)
+    }
 
     @Step("もしリバースプロキシにアクセスする")
     fun accessReverseProxy() {
